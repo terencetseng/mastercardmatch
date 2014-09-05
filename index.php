@@ -14,8 +14,10 @@ $app->get('/name', function() use ($app) {
 	                
 	</ns2:TerminationInquiryRequest>*/
 	
-	$request = json_decode($app->request()->get('request'));
+	$request = $app->request()->params('request');
 	echo $request;
+	echo json_decode($request);
+	echo 'test';
 	/*$xml_request = sprintf('
         <AcquirerId>%s</AcquirerId>
 		<Merchant>
