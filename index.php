@@ -8,7 +8,7 @@ $app = new \Slim\Slim([
 	'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')
 ]);
 
-$app->get('/hello/:name', function($name) {
+$app->get('/name/:name', function($name) {
 	echo "Hello, $name";
 });
 
