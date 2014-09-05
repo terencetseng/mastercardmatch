@@ -16,6 +16,7 @@ class MasterCardMatch {
 	}
 	
 	public function name($name) {
+		echo "hello";
 		echo $name;
 	}
 }
