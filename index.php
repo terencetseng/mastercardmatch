@@ -4,8 +4,8 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Table\Models\Entity;
 
 class MasterCardMatch {
-	private $tableName = 'wepaymcmatch';
-	private $connString ='CUSTOMCONNSTR_MCMATCH_CONN_STRING';
+	private static $tableName = 'wepaymcmatch';
+	private static $connString ='CUSTOMCONNSTR_MCMATCH_CONN_STRING';
 	
 	public function __construct() {
 		$this->app = new \Slim\Slim(['table_name' => self::$tableName, 'conn_string' => getenv(self::$connString)]);
