@@ -7,7 +7,7 @@ use WindowsAzure\Table\Models\Entity;
 $app->view(new \JsonApiView());
 $app->add(new \JsonApiMiddleware());
 */
-$app = new \Slim();
+$app = new \Slim\Slim();
 
 $app->get('/hello/:name', function($name) {
 	echo "Hello, $name";
