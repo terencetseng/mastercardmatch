@@ -11,7 +11,7 @@ class MasterCardMatch {
 		$this->app = new \Slim\Slim(['table_name' => self::$tableName, 'conn_string' => getenv(self::$connString)]);
 		$this->app->view(new \JsonApiView());
 		$this->app->add(new \JsonApiMiddleware());
-		$this->get('name/:name', [$this, 'name']);
+		$this->app->get('name/:name', [$this, 'name']);
 		$this->app->run();
 	}
 	
