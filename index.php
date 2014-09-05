@@ -12,7 +12,7 @@ class MasterCardMatch {
 		$this->app->view(new \JsonApiView());
 		$this->app->add(new \JsonApiMiddleware());
 		$this->app->get('name/:name', [$this, 'name']);
-		$this->app->run();
+		return $this->app;
 	}
 	
 	public function name($name) {
@@ -22,3 +22,4 @@ class MasterCardMatch {
 }
 
 $mc = new MasterCardMatch();
+$mc->run();
