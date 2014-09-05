@@ -8,7 +8,7 @@ $app = new \Slim\Slim([
 	'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')
 ]);
 
-$app->get('/name/:name', function() use ($app) {
+$app->get('/name', function() use ($app) {
 	/*(<?xml version="1.0" encoding="utf-8"?>
 	<ns2:TerminationInquiryRequest xmlns:ns2="http://mastercard.com/termination">
 	                
