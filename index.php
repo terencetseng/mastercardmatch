@@ -3,9 +3,17 @@ require_once './vendor/autoload.php';
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Table\Models\Entity;
 // Bootstrap with config
-$app = new \Slim\Slim(['table_name' => 'osfi', 'conn_string' => getenv('CUSTOMCONNSTR_OSFI_CONN_STRING')]);
+$app = new \Slim\Slim(['table_name' => 'wepaymcmatch', 'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')]);
 $app->view(new \JsonApiView());
 $app->add(new \JsonApiMiddleware());
+
+$app->get('/hello/:name', function($name) {
+	echo "Hello, $name";
+});
+
+$app->run();
+
+/*&
 // Custom methods
 $app->timer = function() {
     list($usec, $sec) = explode(" ", microtime());
@@ -58,3 +66,4 @@ $app->get('/metaphone/:name', function ($name) use ($app) {
 });
 
 $app->run();
+*/

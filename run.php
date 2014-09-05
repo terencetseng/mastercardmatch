@@ -13,7 +13,7 @@ use WindowsAzure\Table\Models\Entity;
 use WindowsAzure\Table\Models\EdmType;
 
 // Connection String
-$CONN_STRING = getenv('CUSTOMCONNSTR_OSFI_CONN_STRING');
+$CONN_STRING = getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING');
 $TABLE_NAME = "osfi";
 
 // Endpoints

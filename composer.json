@@ -1,10 +1,10 @@
 {
-    "name": "abrutus/osfi",
-    "description": "osfi check api",
+    "name": "terencetseng/mastercardmatch",
+    "description": "mastercard match api",
     "authors": [
         {
-            "name": "Andre Brutus",
-            "email": "andre@brut.us"
+            "name": "Terence Tseng",
+            "email": "terence.tseng@gmail.com"
         }
     ],
     "require": {
