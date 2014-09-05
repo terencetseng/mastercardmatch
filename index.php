@@ -8,12 +8,44 @@ $app = new \Slim\Slim([
 	'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')
 ]);
 
-$app->get('/name/:name', function($name) {
-	echo "Hello, $name";
+$app->get('/name/:name', function() use ($app) {
+	/*(<?xml version="1.0" encoding="utf-8"?>
+	<ns2:TerminationInquiryRequest xmlns:ns2="http://mastercard.com/termination">
+	                
+	</ns2:TerminationInquiryRequest>*/
+	
+	$request = json_decode($app->request()->get('request'));
+	echo $request;
+	/*$xml_request = sprintf('
+        <AcquirerId>%s</AcquirerId>
+		<Merchant>
+			<Name>%s</Name>
+			<Address>
+				<Line1>%s</Line1>
+				<City>%s</City>
+				<CountrySubdivision>%s</CountrySubdivision>
+				<PostalCode>%s</PostalCode>
+				<Country>%s</Country>
+			</Address>
+			<Principal>
+				<FirstName>%s</FirstName>
+				<LastName>%s</LastName>
+				<Address>
+					<CountrySubdivision>%s</CountrySubdivision>
+					<PostalCode>%s</PostalCode>
+					<Country>%s</Country>
+				</Address>
+			</Principal>
+		</Merchant>
+        ',
+		
+	);*/
+	
+	//$xml = new SimpleXMLElement($xml_request);
+
 });
 
 $app->run();
-
 
 // Bootstrap with config
 /*$app = new \Slim\Slim(['table_name' => 'wepaymcmatch', 'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')]);
