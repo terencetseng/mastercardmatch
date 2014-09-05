@@ -3,9 +3,11 @@ require_once './vendor/autoload.php';
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Table\Models\Entity;
 // Bootstrap with config
-$app = new \Slim\Slim(['table_name' => 'wepaymcmatch', 'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')]);
+/*$app = new \Slim\Slim(['table_name' => 'wepaymcmatch', 'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')]);
 $app->view(new \JsonApiView());
 $app->add(new \JsonApiMiddleware());
+*/
+$app = new \Slim\Slim();
 
 $app->get('/hello/:name', function($name) {
 	echo "Hello, $name";
