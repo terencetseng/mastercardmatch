@@ -16,8 +16,15 @@ $app->get('/name', function() use ($app) {
 	
 	$request = $app->request()->params('request');
 	echo $request;
-//	echo json_decode($request);
 
+	$x = [
+		"x" => [
+			"a"=>"b",
+			"c"=>"d"
+		],
+		"y" => 12341
+	];
+	echo json_encode($x);
 	/*$xml_request = sprintf('
         <AcquirerId>%s</AcquirerId>
 		<Merchant>
