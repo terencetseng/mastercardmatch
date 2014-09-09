@@ -3,20 +3,16 @@ require_once './vendor/autoload.php';
 use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Table\Models\Entity;
 
-$URL_SANDBOX = 'https://sandbox.api.mastercard.com/fraud/merchant/v1/termination-inquiry';
-$URL_PROD =  'https://api.mastercard.com/fraud/merchant/v1/termination-inquiry';
-
 $app = new \Slim\Slim([
 	'table_name' => 'wepaymcmatch',
 	'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')
 ]);
 
 $app->get('/name', function() use ($app) {
+	$URL_SANDBOX = 'https://sandbox.api.mastercard.com/fraud/merchant/v1/termination-inquiry';
+	$URL_PROD =  'https://api.mastercard.com/fraud/merchant/v1/termination-inquiry';
+	
 	$environment = $app->request()->params('environment');
-	if(empty($environment)) {
-		echo "wtf?";
-		return;
-	}
 	
 	$url = $URL_SANDBOX;
 	if($environment == 'prod') {
