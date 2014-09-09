@@ -23,6 +23,9 @@ $app->get('/name', function() use ($app) {
 		$url = $URL_PROD;
 	}
 	
+	echo $url;
+	return;
+	
 	$request = $app->request()->params('request');
 	$obj = json_decode(urldecode($request));
 	
@@ -93,7 +96,7 @@ $app->get('/name', function() use ($app) {
 	} catch(ServiceException $e) {
 		$app->render(500, [
 				'code' => $e->getCode(),
-				'msg' => $e->getMessage(),
+				'msg' => $e->getMessage()
 				]);
 		return;
 	}
