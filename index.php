@@ -25,6 +25,8 @@ $app->get('/name', function() use ($app) {
 	
 	if(!$debug) {
 		$obj = json_decode(urldecode($request));
+		print_r($obj);
+		return;
 	}
 	
 	echo $request;
