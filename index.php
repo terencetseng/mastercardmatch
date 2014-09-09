@@ -28,6 +28,7 @@ $app->get('/name', function() use ($app) {
 	}
 	
 	echo $request;
+	return;
 	
 	$xml_request = sprintf('
 		<ns2:TerminationInquiryRequest xmlns:ns2="http://mastercard.com/termination">
