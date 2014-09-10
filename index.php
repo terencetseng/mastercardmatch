@@ -8,7 +8,10 @@ $app = new \Slim\Slim([
 	'conn_string' => getenv('CUSTOMCONNSTR_MCMATCH_CONN_STRING')
 ]);
 
-$app->get('/name', function() use ($app) {
+/**
+ * MATCH Termination Inquiry
+ */
+$app->get('/termination', function() use ($app) {
 	$URL_SANDBOX = 'https://sandbox.api.mastercard.com/fraud/merchant/v1/termination-inquiry';
 	$URL_PROD =  'https://api.mastercard.com/fraud/merchant/v1/termination-inquiry';
 	
@@ -20,7 +23,6 @@ $app->get('/name', function() use ($app) {
 		$url = $URL_PROD;
 	}
 	
-
 	$request = $app->request()->params('request');
 	
 	if(!$debug) {
